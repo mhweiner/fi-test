@@ -1,7 +1,7 @@
+import {GET} from "../utils/rp";
+
 export function getWalks() {
 
-}
-
-function parseWalks() {
+  return GET('/api/walks').then(result => result.json()).then(resp => resp.data);
 
 }

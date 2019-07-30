@@ -34,7 +34,7 @@ function parseWalks(datapoints, timeThreshold) {
 
   let addWalk = i => {
 
-    let lonLatArray = datapoints.slice(iLast, i).map(p => [p.longitude, p.latitude]);
+    let lonLatArray = datapoints.slice(iLast, i).map(p => [parseFloat(p.longitude), parseFloat(p.latitude)]);
 
     walks.push({
       date: parse(datapoints[iLast].timestamp),

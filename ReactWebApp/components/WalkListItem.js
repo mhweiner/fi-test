@@ -3,9 +3,9 @@ import React from 'react';
 import SingleLineDataPreview from "./SingleLineDataPreview";
 import ExplodedData from "./ExplodedData";
 
-import styles from './ListItem.scss';
+import styles from './WalkListItem.scss';
 
-export default class ListItem extends React.Component{
+export default class WalkListItem extends React.Component{
 
   render() {
 
@@ -17,7 +17,7 @@ export default class ListItem extends React.Component{
 
     }
 
-    return <div className={classes.join(' ')}>
+    return <div className={classes.join(' ')} onClick={this.props.onSelect}>
       <h3>7/23 12:32PM (28min) - Schennectidtydyddyy, NY</h3>
       <div className={styles.data}>
         {!this.props.selected && <SingleLineDataPreview/>}

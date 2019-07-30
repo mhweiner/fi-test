@@ -1,33 +1,59 @@
 import React from 'react';
 
-import {GET} from '../utils/rp';
+import {getWalks} from '../services/WalksService';
 
 import Header from "./Header";
 import Map from "./Map";
-import List from "./List";
+import WalkList from "./WalkList";
 
 import styles from './App.scss';
 
 export default class App extends React.Component{
 
   state = {
-    route: [],
+    route: null,
     walks: [],
-    selected: 0
+    selected: null
   };
 
   componentDidMount() {
 
-    GET('/api/walks').then(result => result.json()).then(resp => console.log(resp));
+    getWalks().then(walks => {
+
+      this.setState({
+        walks: walks
+      });
+
+    });
 
   }
+
+  componentDidUpdate() {
+
+    if (this.state.walks.length && this.state.selected === null) {
+
+      this.selectWalk(0);
+
+    }
+
+  }
+
+  selectWalk = index => {
+
+    this.setState({
+      selected: index,
+      route: this.state.walks[index].gpsTrace
+    });
+
+  };
 
   render() {
 
     let map = <Map route={this.state.route}/>;
-    let list = <List
+    let list = <WalkList
       selected={this.state.selected}
-      onSelect={i => this.setState({selected: i})}
+      onSelect={this.selectWalk}
+      walks={this.state.walks}
     />;
 
     return <div className={styles.default}>
