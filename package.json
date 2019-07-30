@@ -26,7 +26,7 @@
     "build-base-css-dev": "mkdir -p www_static_dist/css && node-sass ReactWebApp/styles/base.scss > www_static_dist/css/app.css",
     "build-base-css-prod": "mkdir -p www_static_dist/css && node-sass --output-style compressed ReactWebApp/styles/base.scss > www_static_dist/css/app.css",
     "copy-static-assets": "rsync -a ReactWebApp/static_assets/* www_static_dist/",
-    "start-dev": "NODE_ENV=development node -r esm devServer.js"
+    "start-dev": "NODE_ENV=development node -r esm backend/server.js"
   },
   "dependencies": {
     "@babel/core": "7.1.2",
@@ -36,10 +36,12 @@
     "babel-cli": "6.26.0",
     "babel-loader": "8.0.4",
     "css-loader": "1.0.1",
+    "date-fns": "^1.30.1",
     "esm": "3.0.84",
     "express": "^4.16.4",
     "fs-readfile-promise": "^3.0.1",
     "js-ordered-dict": "^2.3.0",
+    "neat-csv": "^5.1.0",
     "node-sass": "4.10.0",
     "react": "16.6.0",
     "react-dom": "16.6.0",

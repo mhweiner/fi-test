@@ -9,13 +9,14 @@ export default class List extends React.Component{
   render() {
 
     return <div className={styles.default}>
-      <ListItem/>
-      <ListItem selected={true}/>
-      <ListItem/>
-      <ListItem/>
-      <ListItem/>
-      <ListItem/>
-      <ListItem/>
+      {this.props.walks.map((walk, i) => {
+
+        return <ListItem
+          key={i.toString()}
+          onSelect={this.props.onSelect}
+        />
+
+      })}
     </div>;
 
   }
