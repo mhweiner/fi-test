@@ -1,0 +1,69 @@
+@import "defines";
+
+@include keyframes(animateOutToTop) {
+  0% {
+    opacity: 1;
+    @include translateY(0);
+  }
+  100% {
+    opacity: 0;
+    @include translateY(-15px);
+  }
+}
+
+@include keyframes(animateInFromBottom) {
+  0% {
+    opacity: 0;
+    @include translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    @include translateY(0);
+  }
+}
+
+@include keyframes(fadeIn) {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes(fadeOut) {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animateOutToTop {
+
+  @include animation(animateOutToTop .3s cubic-bezier(0.25, 0.46, 0.45, 0.9));
+  @include animation-fill-mode(forwards);
+
+}
+
+.animateInFromBottom {
+
+  @include animation(animateInFromBottom .6s cubic-bezier(0.25, 0.46, 0.45, 0.9));
+  @include animation-fill-mode(forwards);
+
+}
+
+.fadeIn {
+
+  @include animation(fadeIn .3s cubic-bezier(0.25, 0.46, 0.45, 0.9));
+  @include animation-fill-mode(forwards);
+
+}
+
+.fadeOut {
+
+  @include animation(fadeOut .3s cubic-bezier(0.25, 0.46, 0.45, 0.9));
+  @include animation-fill-mode(forwards);
+
+}

@@ -1,0 +1,54 @@
+{
+  "name": "mhweiner",
+  "version": "3.0.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mhweiner/mhweiner.git"
+  },
+  "devDependencies": {},
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  },
+  "scripts": {
+    "clean": "rm -rf www_static_dist && mkdir www_static_dist",
+    "dev": "npm run clean && npm run build-frontend-dev && npm run start-dev",
+    "build-prod": "npm run clean && npm run build-frontend-prod",
+    "watch": "webpack --mode development --progress --watch",
+    "build-frontend-dev": "npm run copy-static-assets && npm run build-base-css-dev && mkdir -p www_static_dist/js && webpack --mode development --progress",
+    "build-frontend-prod": "npm run copy-static-assets && npm run build-base-css-prod && mkdir -p www_static_dist/js && webpack --mode production --progress",
+    "build-base-css-dev": "mkdir -p www_static_dist/css && node-sass ReactWebApp/styles/base.scss > www_static_dist/css/app.css",
+    "build-base-css-prod": "mkdir -p www_static_dist/css && node-sass --output-style compressed ReactWebApp/styles/base.scss > www_static_dist/css/app.css",
+    "copy-static-assets": "rsync -a ReactWebApp/static_assets/* www_static_dist/",
+    "start-dev": "NODE_ENV=development node -r esm devServer.js"
+  },
+  "dependencies": {
+    "@babel/core": "7.1.2",
+    "@babel/plugin-proposal-class-properties": "7.1.0",
+    "@babel/preset-env": "7.1.0",
+    "@babel/preset-react": "7.0.0",
+    "babel-cli": "6.26.0",
+    "babel-loader": "8.0.4",
+    "css-loader": "1.0.1",
+    "esm": "3.0.84",
+    "express": "^4.16.4",
+    "fs-readfile-promise": "^3.0.1",
+    "images-loaded": "^1.0.0",
+    "js-ordered-dict": "^2.3.0",
+    "mr-router": "2.0.1",
+    "node-sass": "4.10.0",
+    "react": "16.6.0",
+    "react-dom": "16.6.0",
+    "sass-loader": "7.1.0",
+    "smooth-scroll-operator": "^5.0.6",
+    "style-loader": "0.23.1",
+    "webpack": "4.25.1",
+    "webpack-cli": "3.1.2"
+  }
+}
