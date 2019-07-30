@@ -1,0 +1,78 @@
+@import "../styles/defines";
+
+.default {
+
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #555;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.1s ease-in-out;
+
+  h3 {
+
+    font-family: $font;
+    font-size: 20px;
+    margin: 0 0 10px 0;
+    color: #333;
+    transition: color 0.1s ease-in-out;
+
+  }
+
+  &:hover {
+
+    background: #e5e5e5;
+
+    h3 {
+
+      color: black;
+
+    }
+
+    .data {
+
+      color: #333;
+
+    }
+
+  }
+
+  &.selected {
+
+    background: white;
+    cursor: auto;
+
+    h3 {
+
+      color: black;
+
+    }
+
+    .data {
+
+      color: #333;
+
+    }
+
+    &:before {
+
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 4px;
+      background: $color-primary;
+
+    }
+
+  }
+
+}
+
+.data {
+
+  color: #666;
+
+}

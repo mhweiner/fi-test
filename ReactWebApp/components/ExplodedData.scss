@@ -1,0 +1,34 @@
+@import "../styles/defines";
+@import "../styles/animations";
+
+.default {
+
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  transition: color 0.1s ease-in-out;
+  font-size: 20px;
+  @include animation(animateInFromBottom .6s cubic-bezier(0.25, 0.46, 0.45, 0.9));
+  @include animation-fill-mode(forwards);
+
+  > div {
+
+    padding: 5px;
+
+  }
+
+  i {
+
+    margin: 0 5px 0 0;
+
+  }
+
+  h4 {
+
+    text-transform: uppercase;
+    font-size: 14px;
+    margin: 0 0 4px 0;
+
+  }
+
+}

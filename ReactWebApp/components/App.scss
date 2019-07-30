@@ -1,0 +1,54 @@
+@import "../styles/defines";
+
+.default {
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  @include media(0, 850) {
+
+    .map {
+
+      height: calc(50% - 65px);
+      top: 65px;
+      bottom: auto;
+      width: 100%;
+
+    }
+
+    .list {
+
+      height: 50%;
+      bottom: 0;
+      top: auto;
+      width: 100%;
+
+    }
+
+  }
+
+}
+
+.map {
+
+  position: absolute;
+  height: calc(100vh - 65px);
+  width: 60%;
+  left: 0;
+  bottom: 0;
+
+}
+
+.list {
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 40%;
+  height: calc(100% - 65px);
+  box-sizing: border-box;
+
+}
