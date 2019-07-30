@@ -1,10 +1,10 @@
 {
-  "name": "mhweiner",
-  "version": "3.0.0",
+  "name": "fi-dogwalk",
+  "version": "1.0.0",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/mhweiner/mhweiner.git"
+    "url": "https://github.com/mhweiner/fi.git"
   },
   "devDependencies": {},
   "babel": {
@@ -39,14 +39,11 @@
     "esm": "3.0.84",
     "express": "^4.16.4",
     "fs-readfile-promise": "^3.0.1",
-    "images-loaded": "^1.0.0",
     "js-ordered-dict": "^2.3.0",
-    "mr-router": "2.0.1",
     "node-sass": "4.10.0",
     "react": "16.6.0",
     "react-dom": "16.6.0",
     "sass-loader": "7.1.0",
-    "smooth-scroll-operator": "^5.0.6",
     "style-loader": "0.23.1",
     "webpack": "4.25.1",
     "webpack-cli": "3.1.2"
