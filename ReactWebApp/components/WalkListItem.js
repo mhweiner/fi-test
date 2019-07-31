@@ -2,6 +2,7 @@ import React from 'react';
 
 import SingleLineDataPreview from "./SingleLineDataPreview";
 import ExplodedData from "./ExplodedData";
+import {parse, format, differenceInMinutes} from 'date-fns';
 
 import styles from './WalkListItem.scss';
 
@@ -17,11 +18,14 @@ export default class WalkListItem extends React.Component{
 
     }
 
+    let formattedStartDate = format(this.props.startDate, 'MM/DD/YY h:mm:A');
+    let duration = differenceInMinutes(this.props.endDate, this.props.startDate);
+
     return <div className={classes.join(' ')} onClick={this.props.onSelect}>
-      <h3>7/23 12:32PM (28min) - Schennectidtydyddyy, NY</h3>
+      <h3>{formattedStartDate} ({duration}min)</h3>
       <div className={styles.data}>
-        {!this.props.selected && <SingleLineDataPreview/>}
-        {this.props.selected && <ExplodedData/>}
+        {!this.props.selected && <SingleLineDataPreview {...this.props}/>}
+        {this.props.selected && <ExplodedData {...this.props}/>}
       </div>
     </div>;
 

@@ -15,6 +15,7 @@ export default class WalkList extends React.Component{
           key={i.toString()}
           onSelect={() => this.props.onSelect(i)}
           selected={this.props.selected === i}
+          {...walk}
         />
 
       })}
