@@ -6,3 +6,5 @@
 yarn
 npm run dev
 ```
+
+Then open browser to http://localhost:3000
