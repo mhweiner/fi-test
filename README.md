@@ -2,7 +2,7 @@
 
 ## To run locally:
 
-Requirements: You'll need to have node, npm, and yarn installed.
+You'll need to have node, npm, and yarn installed. Then do:
 
 ```
 yarn
