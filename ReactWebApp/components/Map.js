@@ -7,6 +7,7 @@ import styles from './Map.scss';
 export default class Map extends React.Component {
 
   ref = React.createRef();
+  mapLoaded = false;
 
   componentDidMount() {
 
@@ -18,6 +19,8 @@ export default class Map extends React.Component {
     });
 
     this.mbgl.on('load', () => {
+
+      this.mapLoaded = true;
 
       // Add zoom and rotation controls to the map.
       this.mbgl.addControl(new mapboxgl.NavigationControl());
@@ -35,7 +38,7 @@ export default class Map extends React.Component {
 
   componentDidUpdate(prevProps, prevState, snapshot) {
 
-    if (this.props.route) {
+    if (this.props.route && this.mapLoaded) {
 
       this.drawRoute(this.props.route);
 
