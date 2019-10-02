@@ -1,4 +1,4 @@
-# fi - dog walk test
+# Take Home Assessment for Fi
 
 ## To run locally:
 
