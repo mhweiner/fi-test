@@ -42,7 +42,7 @@
     "fs-readfile-promise": "^3.0.1",
     "js-ordered-dict": "^2.3.0",
     "neat-csv": "^5.1.0",
-    "node-sass": "4.10.0",
+    "node-sass": "4.13.1",
     "react": "16.6.0",
     "react-dom": "16.6.0",
     "sass-loader": "7.1.0",
